@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns=":th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>商品選択画面</title>
+</head>
+<body>
+	 <h1>商品を選択してください</h1>
+    <form action="/takeout/product/checkStock" method="post">
+        <div th:each="product : ${products}">
+            <label th:text="${product.productName}">
+                <input type="checkbox" name="productName" th:value="${product.productName}">
+                <input type="checkbox" name="productName" th:value="${product.productName}">
+                <input type="checkbox" name="productName" th:value="${product.productName}">
+            </label><br>
+        </div>
+        <button type="submit">ユーザー情報入力へ</button>
+    </form>
+    <div th:if="${errorMessage}">
+        <p th:text="${errorMessage}"></p>
+    </div>
+</body>
+</html>
