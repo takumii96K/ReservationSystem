@@ -1,5 +1,6 @@
 package org.example.resevationsystem.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,8 +17,15 @@ public class Product
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long productId;	
-	private String productName;
-	private int productPrice;
-	private int productStock;
+	@Column(name = "product_id")
+	private long productId;		//商品ID
+	
+	@Column(name = "product_name")
+	private String productName;	//商品名
+	
+	@Column(name = "product_price")
+	private int productPrice;	//売上金額
+	
+	@Column(name = "product_stock")
+	private int productStock;	//在庫数
 }
