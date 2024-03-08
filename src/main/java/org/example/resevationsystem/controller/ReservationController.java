@@ -1,4 +1,4 @@
 package org.example.resevationsystem.controller;
 
-public class ResevationController {
+public class ReservationController {
 }
