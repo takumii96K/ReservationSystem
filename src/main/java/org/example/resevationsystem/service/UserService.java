@@ -7,7 +7,6 @@ public interface UserService {
 
 
     void registerUser(UserRegistrationForm form);
-
     /**
      * ユーザー削除
      */

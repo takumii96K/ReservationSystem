@@ -38,7 +38,6 @@ public class SecurityConfig {
                         .accessDeniedPage("/display-access-denind"))
                 //ログアウトの設定
                 .logout(LogoutConfigurer::permitAll);
-        System.out.println("logging1");
         return http.build();
     }
 
@@ -53,7 +52,7 @@ public class SecurityConfig {
 
     /**
      * パスワードエンコーダー
-     * @return
+     * @return ハッシュ化されたパスワード
      */
     @Bean
     public PasswordEncoder passwordEncoder() {

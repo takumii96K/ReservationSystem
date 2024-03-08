@@ -1,10 +1,12 @@
 
-package org.example.Reservationsystem.controller;
+package org.example.resevationsystem.controller;
 
 import java.util.Optional;
 
-import org.example.Reservationsystem.ReservationForm;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.example.resevationsystem.form.ReservationForm;
+import org.example.resevationsystem.service.ProductService;
+import org.example.resevationsystem.service.ReservationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,26 +15,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
-//予約内容確認画面コントローラ
+/**
+ * 予約画面コントローラー
+ * 個人情報入力フォームと、確定商品と金額の表示
+ */
 @Controller
-@RequestMapping("takeout/product/reservation")
+@RequestMapping("takeout/product")
+@RequiredArgsConstructor
 public class ReservationController {
-	// DI対象
-	@Autowired
-	ProductService service;
-	
-	
-	//入力した名前と電話番号を受け取る⇔Formに入る
+
+	private final ReservationService serivice;
+//	private final ProductService service;
+
+	/**
+	 * ReservationFormをModelに格納する
+	 * @param model objname:"ReservationForm"
+	 */
 	@ModelAttribute
-	public ReservationForm setUpForm() {
+	public void setUpForm(Model model) {
 		ReservationForm form = new ReservationForm();
-		return form;
+		model.addAttribute("ReservationForm",form);
 	}
 
 	//注文内容を確認する
-	@GetMapping("Product/{id}")
+	@GetMapping("/reservation")
 	public String showReservationForm(ReservationForm Form, @PathVariable Integer id, Model model) {
 		Optional<product> productOpt = service.selectOneById(id);
 		//Optional<Reservation> ReservationOpt = ReservationOpt.map(t -> makeReservationForm(t));

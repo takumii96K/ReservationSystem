@@ -3,6 +3,7 @@ package org.example.resevationsystem.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,12 +12,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Resevation
+public class Reservation
 {
+
+	//主キー
+	@Id
 	private long resevationId;
 	private String resevationName;
 	private LocalDateTime dateTime;
-	private String address;
+	private String tel;
 	private boolean status;
 	
 }

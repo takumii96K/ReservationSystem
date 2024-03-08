@@ -7,6 +7,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * DataInitializer
@@ -26,6 +27,7 @@ public class DataInitializer implements ApplicationRunner {
      * @param args args
      */
     @Override
+    @Transactional
     public void run(ApplicationArguments args) {
 
         //管理者ユーザーを初期登録(admin:Properties参照）
