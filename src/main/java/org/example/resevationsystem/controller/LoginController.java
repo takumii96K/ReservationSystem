@@ -3,7 +3,7 @@ package org.example.resevationsystem.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.resevationsystem.entity.converter.UserRegistrationFormConverter;
 import org.example.resevationsystem.form.UserRegistrationForm;
-import org.example.resevationsystem.service.UserService;
+import org.example.resevationsystem.service.spec.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

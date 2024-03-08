@@ -1,4 +1,4 @@
-package org.example.resevationsystem.service;
+package org.example.resevationsystem.service.spec;
 
 import java.util.List;
 import java.util.Optional;

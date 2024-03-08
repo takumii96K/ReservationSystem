@@ -1,4 +1,4 @@
-package org.example.resevationsystem.service;
+package org.example.resevationsystem.service.spec;
 
 import org.example.resevationsystem.entity.User;
 import org.example.resevationsystem.form.UserRegistrationForm;
