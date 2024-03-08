@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns=":th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,6 +72,7 @@ button {
   
 </head>
 <body>
+<<<<<<< HEAD
 	<header>
         <h1>チームA</h1>
     </header>
@@ -91,6 +92,16 @@ button {
                     </label><br>
                 </div>
             </form>
+=======
+	 <h1>商品を選択してください</h1>
+    <form action="/takeout/product" method="post">
+        <div th:each="product : ${products}">
+            <label th:text="${product.productName}">
+                <input type="checkbox" name="productName" th:value="${product.productName}">
+                <input type="checkbox" name="productName" th:value="${product.productName}">
+                <input type="checkbox" name="productName" th:value="${product.productName}">
+            </label><br>
+>>>>>>> branch 'cooporator' of https://github.com/takumii96K/ResevationSystem.git
         </div>
         
         <!-- 商品2 -->
