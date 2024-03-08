@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/takeout/product")
 public class ProductController {
-
 	/* DI対象 */
 	@Autowired
 	ProductService service;
@@ -30,4 +29,5 @@ public class ProductController {
 		// 予約ページへ
 		return "reservation";
 	}
+
 }
