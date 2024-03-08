@@ -2,22 +2,165 @@
 <html xmlns=":th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>商品選択画面</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(226, 214, 152); /* ボディ背景色：橙 */
+  }
+  
+   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255); /* ヘッダー背景色：白 */
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+  
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 80px; /* ヘッダーの高さ分の余白 */
+  }
+
+  .menu-item {
+    width: calc(33.33% - 40px);
+    margin: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .menu-item img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-item:hover img {
+    opacity: 0.7;
+  }
+
+  .menu-item h3 {
+    margin: 10px 0;
+  }
+  
+  .menu-item p {
+    color: #555;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+button {
+    background-color: #ff7f0e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+  
 </head>
 <body>
-	 <h1>商品を選択してください</h1>
-    <form action="/takeout/product/checkStock" method="post">
-        <div th:each="product : ${products}">
-            <label th:text="${product.productName}">
-                <input type="checkbox" name="productName" th:value="${product.productName}">
-                <input type="checkbox" name="productName" th:value="${product.productName}">
-                <input type="checkbox" name="productName" th:value="${product.productName}">
-            </label><br>
+	<header>
+        <h1>チームA</h1>
+    </header>
+    
+    <h3>商品を選択してください</h3>
+    <!-- ▽▽　以下商品一覧　▽▽ -->
+    <!-- 商品1 -->
+    <div class="menu">
+        <!-- 商品1 -->
+        <div class="menu-item">
+            <img src="https://cdn.macaro-ni.jp/image/summary/108/108786/bPSqCOs6isa8vH8rGWVFZhiRcpQs4reeaT8ZlN8n.jpg" alt="商品1">
+            <h3>たこやき <span>￥300</span></h3>
+            <form action="/takeout/product/checkStock" method="post">
+                <div th:each="product : ${products}">
+                    <label th:text="${product.productName}">
+                        <input type="checkbox" name="productName" th:value="${product.productName}">
+                    </label><br>
+                </div>
+            </form>
         </div>
-        <button type="submit">ユーザー情報入力へ</button>
-    </form>
-    <div th:if="${errorMessage}">
-        <p th:text="${errorMessage}"></p>
+        
+        <!-- 商品2 -->
+        <div class="menu-item">
+            <img src="https://www.esthetic.cc/column/column/img/01296.jpg" alt="商品2">
+            <h3>焼きそば <span>￥400</span></h3>
+            <form action="/takeout/product/checkStock" method="post">
+                <div th:each="product : ${products}">
+                    <label th:text="${product.productName}">
+                        <input type="checkbox" name="productName" th:value="${product.productName}">
+                    </label><br>
+                </div>
+            </form>
+        </div>
+        
+        <!-- 商品3 -->
+        <div class="menu-item">
+            <img src="https://yataiya-senjudo.com/wp-content/uploads/2021/01/hashimaki_33.jpg" alt="商品3">
+            <h3>はしまき <span>￥300</span></h3>
+            <form action="/takeout/product/checkStock" method="post">
+                <div th:each="product : ${products}">
+                    <label th:text="${product.productName}">
+                        <input type="checkbox" name="productName" th:value="${product.productName}">
+                    </label><br>
+                </div>
+            </form>
+        </div>
     </div>
+    
+    <!-- 商品4 -->
+        <div class="menu-item">
+            <img src="https://www.daisho.co.jp/dw/wp-content/uploads/2023/07/HP%E3%83%AC%E3%82%B7%E3%83%94%E7%94%A8%E3%80%80%E3%81%82%E3%82%81%E3%80%80%E3%82%8A%E3%82%93%E3%81%94-scaled.jpg" alt="商品4">
+            <h3>りんご飴 <span>￥300</span></h3>
+            <form action="/takeout/product/checkStock" method="post">
+                <div th:each="product : ${products}">
+                    <label th:text="${product.productName}">
+                        <input type="checkbox" name="productName" th:value="${product.productName}">
+                    </label><br>
+                </div>
+            </form>
+        </div>
+        
+        <!-- 商品5 -->
+        <div class="menu-item">
+            <img src="https://img.kewpie.co.jp/recipes_src/recipe/img/large/QP00010078_1L.jpg" alt="商品5">
+            <h3>チョコバナナ <span>￥200</span></h3>
+            <form action="/takeout/product/checkStock" method="post">
+                <div th:each="product : ${products}">
+                    <label th:text="${product.productName}">
+                        <input type="checkbox" name="productName" th:value="${product.productName}">
+                    </label><br>
+                </div>
+            </form>
+        </div>
+        
+        <!-- 商品6 -->
+        <div class="menu-item">
+            <img src="https://www.lithon.co.jp/wp-content/uploads/2020/12/kdhs014w_sub_01.jpg" alt="商品6">
+            <h3>ベビーカステラ <span>￥500</span></h3>
+            <form action="/takeout/product/checkStock" method="post">
+                <div th:each="product : ${products}">
+                    <label th:text="${product.productName}">
+                        <input type="checkbox" name="productName" th:value="${product.productName}">
+                    </label><br>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    <button type="submit">ユーザー情報入力へ</button>
 </body>
 </html>
