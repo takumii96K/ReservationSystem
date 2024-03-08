@@ -11,12 +11,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Resevation
+public class Reservation
 {
-	private long resevationId;
-	private String resevationName;
-	private LocalDateTime dateTime;
-	private String address;
-	private boolean status;
-	
+	private long reservationId;
+	private String reserverName;	//予約者の名前
+	private LocalDateTime dateTime;	//予約日時
+	private String tel;				//電話番号
 }
