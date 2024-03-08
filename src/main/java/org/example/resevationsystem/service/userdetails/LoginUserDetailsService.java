@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.resevationsystem.entity.projection.UserLoginProjection;
 import org.example.resevationsystem.form.UserRegistrationForm;
 import org.example.resevationsystem.repository.JpaUserRepository;
-import org.example.resevationsystem.service.UserService;
+import org.example.resevationsystem.service.spec.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
