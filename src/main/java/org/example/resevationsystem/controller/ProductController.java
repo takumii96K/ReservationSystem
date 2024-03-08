@@ -2,7 +2,7 @@ package org.example.resevationsystem.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.resevationsystem.entity.Product;
-import org.example.resevationsystem.service.ProductService;
+import org.example.resevationsystem.service.spec.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
