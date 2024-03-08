@@ -12,5 +12,4 @@ public interface ProductService
 	Product updateProduct(Long id, Product productDetails); //商品の情報を更新(在庫)
 	Product getProductById(Long id); 						//商品idから商品情報を取得
 
-
 }
