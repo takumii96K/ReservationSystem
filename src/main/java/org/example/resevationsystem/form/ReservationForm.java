@@ -1,4 +1,4 @@
-package org.example.resevationsystem;
+package org.example.resevationsystem.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
