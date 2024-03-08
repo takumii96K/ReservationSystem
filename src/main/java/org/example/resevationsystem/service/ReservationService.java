@@ -1,6 +1,6 @@
 package org.example.resevationsystem.service;
-
-public interface ReservationService {
-
+public interface ReservationService 
+{
+	
 
 }

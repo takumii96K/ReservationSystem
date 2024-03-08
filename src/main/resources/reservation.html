@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>「テイクアウト予約」アプリ：予約確認画面</title>
+</head>
+<body>
+<h1>「テイクアウト予約」アプリ：予約確認画面</h1>
+<h3>内容を確認して、氏名・連絡先を入力</h3>
+<form method="POST" th:action="@{takeout/product/reservation}"
+th:object="${confirmForm}">
+
+<label>氏名：</label><br>
+<input type="text" th:field="*{name}"></textarea><br>
+<label>電話番号：</label><br>
+<input type="text" th:field="*{tel}"><br>
+<label>注文内容：</label><br>
+<input type="text" th:field="*{productId}"><br>
+
+
+<input type="submit" value="確定">
+</form>
+</body>
+</html>
